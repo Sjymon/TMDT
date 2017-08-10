@@ -4,8 +4,11 @@ from django.contrib import admin
 
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
     url(r'', include('apps.core.urls', namespace='core')),
+    url(r'^product/', include('apps.product.urls', namespace='product')),
+    
+    url(r'^groupproduct/', include('apps.group_product.urls', namespace='group_product')),
+    url(r'^admin/', admin.site.urls),
 ]
 
 if settings.DEBUG:
